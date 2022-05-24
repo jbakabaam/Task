@@ -2,7 +2,7 @@
 #  SAS To DF  #
 ###############
 
-import pandas as pd # Import Pandas
+import pandas as pd
 df = pd.read_sas("filename.sas7bdat", chunksize = 1000000)
 dfs = []
 
