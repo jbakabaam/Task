@@ -18,13 +18,13 @@ for path_detail in dir_list:
     names=['SPEC_ID_SNO','LN_NO','PRSCP_GRANT_NO','FQ1_MDCT_QTY','DY1_MDCT_QTY','TOT_INJC_DDCNT_EXEC_FQ','TOT_USE_QTY_OR_EXEC_FQ','UNPRC','AMT','GNL_NM_CD'],
                      index_col=False)
     df_list = []
-    cnt = 1
-    chunksz = 1000000
+    chunk_cnt = 1
+    chunk_size = 1000000
 
     for chunk in df:
         df_list.append(chunk)
-        print("*** Table Data: ", cnt*chunksz, " Loaded ***")
-        cnt += 1
+        print("*** Table Data: ", chunk_cnt*chunk_size, " Loaded ***")
+        chunk_cnt += 1
 
     print(len(df_list))
     count_all_records = sum([len(x) for x in df_list])
@@ -34,8 +34,8 @@ for path_detail in dir_list:
     print(df_list[0].columns)
     print(len(df_list[0].columns))
 
-    for_cnt = 1
+    append_cnt = 1
     for x in range(len(df_list)):
         df_list[x].to_sql('t53', engine, index=False, if_exists='append')
-        print(for_cnt, "chunk appended")
-        for_cnt += 1
+        print(append_cnt, "chunk appended")
+        append_cnt += 1
