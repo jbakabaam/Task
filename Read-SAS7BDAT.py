@@ -42,7 +42,7 @@ for_cnt = 1
 for_num = len(dfs) + 1
 print(for_num)
 for x in range(for_num):
-    dfs[x].to_sql('table_name', engine, index=True, if_exists='append')
+    dfs[x].to_sql('table_name', engine, index=False, if_exists='append')
     print(for_cnt, "chunk appended")
     for_cnt += 1
 
