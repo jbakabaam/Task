@@ -14,7 +14,7 @@ dir_list = os.listdir('/PATH/')
 dir_len = len(dir_list)
 
 for path_detail in dir_list:
-    print("*** ", dir_len, " files left")
+    print("*** ", dir_len, " file(s) left ***")
     print("*** Now: ", path_detail, " ***")
     df = pd.read_csv('/PATH/' + path_detail, chunksize = 1000000,
     names=['SPEC_ID_SNO','LN_NO','PRSCP_GRANT_NO','FQ1_MDCT_QTY','DY1_MDCT_QTY','TOT_INJC_DDCNT_EXEC_FQ','TOT_USE_QTY_OR_EXEC_FQ','UNPRC','AMT','GNL_NM_CD'], index_col=False)
