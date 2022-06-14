@@ -2,7 +2,26 @@ Task
 ===
 ![rwe-2-2](https://user-images.githubusercontent.com/103108988/173531664-68c27542-2c37-48f0-b05a-ca2d49f4ee43.jpg)
 
-This repo contains
+Real-world data (RWD) and real-world evidence (RWE) are playing an increasing role in health care decisions.
+---
+FDA uses RWD and RWE to monitor postmarket safety and adverse events and to make regulatory decisions.
+The health care community is using these data to support coverage decisions and to develop guidelines and decision support tools for use in clinical practice.
+Medical product developers are using RWD and RWE to support clinical trial designs (e.g., large simple trials, pragmatic clinical trials) and observational studies to generate innovative, new treatment approaches.
+The 21st Century Cures Act, passed in 2016, places additional focus on the use of these types of data to support regulatory decision making, including approval of new indications for approved drugs. Congress defined RWE as data regarding the usage, or the potential benefits or risks, of a drug derived from sources other than traditional clinical trials. FDA has expanded on this definition as discussed below.
+
+Why is this happening now?
+---
+The use of computers, mobile devices, wearables and other biosensors to gather and store huge amounts of health-related data has been rapidly accelerating. This data holds potential to allow us to better design and conduct clinical trials and studies in the health care setting to answer questions previously though infeasible. In addition, with the development of sophisticated, new analytical capabilities, we are better able to analyze these data and apply the results of our analyses to medical product development and approval.
+
+What are RWD and where do they come from?
+---
+Real-world data are the data relating to patient health status and/or the delivery of health care routinely collected from a variety of sources. RWD can come from a number of sources, for example:
+
+- Electronic health records (EHRs)
+- Claims and billing activities
+- Product and disease registries
+- Patient-generated data including in home-use settings
+- Data gathered from other sources that can inform on health status, such as mobile devices
 
 What is RWE?
 ---
