@@ -15,7 +15,8 @@ for path_detail in dir_list:
     print("*** ", dir_len, " file(s) left ***")
     print("*** Now: ", path_detail, " ***")
     df = pd.read_csv('/PATH/' + path_detail, chunksize = 1000000,
-    names=[''], index_col=False)
+    names=['SPEC_ID_SNO', 'LN_NO', 'CZ_ITEM_SNO', 'DIV_TY_CD', 'DIV_CD', 'SP1_SP2_TP_CD', 'FQ1_MDCT_TP_CD', 'DY1_MDCT_QTY', 'DY1_INJC_QTY_EXEC_FQ', 
+           'TOT_INJC_DDCNT_EXEC_FQ', 'TOT_USE_QTY_OR_EXEC_FQ', 'UNPRC', 'AMT', 'ADDC_ADT_AMT', 'GNL_NM_CD'], index_col=False)
     df_list = []
     chunk_cnt = 1
     chunk_size = 1000000
