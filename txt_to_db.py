@@ -21,10 +21,10 @@ dir_len = len(dir_list)
 
 engine = create_engine(f'mysql+pymysql://{mysql_id}:{mysql_pw}@{mysql_host}:{mysql_port}/{mysql_db_name}')
 
-for path_detail in dir_list:
+for file_name in dir_list:
     print("*** ", dir_len, " file(s) left ***")
-    print("*** Now: ", path_detail, " ***")
-    df = pd.read_csv(dir_path + path_detail, chunksize = 1000000,
+    print("*** Now: ", file_name, " ***")
+    df = pd.read_csv(dir_path + file_name, chunksize = 1000000,
     names=['COLUMN_NAME_1', 'COLUMN_NAME_2', 'COLUMNS_NAME_3'], index_col=False)
     df_list = []
     chunk_cnt = 1
