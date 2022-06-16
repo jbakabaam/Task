@@ -1,0 +1,4 @@
+# nps_2013/2014/2015_ykiho
+# 13 columns
+names=['YID', 'DATE', 'SIDO_CD', 'CL_CD', 'ORG_DF', 'BED_GRADE',
+    'PER_50BED_DOCTOR', 'PER_50BED_DENTAL', 'PER_50BED_ORIENTAL', 'PER_50BED_NURSE', 'CT', 'MRI', 'PET']
