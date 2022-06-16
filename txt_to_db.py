@@ -51,3 +51,5 @@ for file_name in dir_list:
         append_cnt += 1
     
     dir_len -= 1
+
+    print("*** End ***")
