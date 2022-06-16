@@ -7,6 +7,10 @@ names=['SPEC_ID_SNO','LN_NO','CZ_ITEM_CD','DIV_TY_CD','DIV_CD','SP1_SP2_TP_CD','
 # 5 columns
 names=['SPEC_ID_SNO', 'SICK_SNO', 'SICK_DGSBJT_CD', 'SICK_CD', 'DMD_DGSBJT_CD']
 
+# nps_2013_t53
+# 10 columns
+ names=['SPEC_ID_SNO','LN_NO','PRSCP_GRANT_NO','FQ1_MDCT_QTY','DY1_MDCT_QTY','TOT_INJC_DDCNT_EXEC_FQ','TOT_USE_QTY_OR_EXEC_FQ','UNPRC','AMT','GNL_NM_CD']
+
 # nps_2013/2014/2015_ykiho
 # 13 columns
 names=['YID', 'DATE', 'SIDO_CD', 'CL_CD', 'ORG_DF', 'BED_GRADE',
