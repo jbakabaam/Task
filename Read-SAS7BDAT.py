@@ -1,4 +1,4 @@
-# sas7bdat to pandas data frame
+# sas7bdat to mysql database (pandas data frame)
 
 from datetime import datetime
 import pandas as pd
