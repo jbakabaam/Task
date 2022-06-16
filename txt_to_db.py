@@ -49,7 +49,6 @@ for file_name in dir_list:
         df_list[x].to_sql(mysql_table_name, engine, index=False, if_exists='append')
         print(append_cnt, "chunk appended")
         append_cnt += 1
-    
     dir_len -= 1
 
-    print("*** End ***")
+print("*** End ***")
