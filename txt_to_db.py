@@ -15,7 +15,7 @@ mysql_host = 'YOUR_MYSQL_HOST (DEFAULT: localhost)'
 mysql_port = 'YOUR_MYSQL_PORT (DEFAULT: 3306)'
 mysql_db_name = 'YOUR_MYSQL_DB_NAME'
 mysql_table_name = 'YOUR_MYSQL_TABLE_NAME'
-dir_path = '/home/buhm/hira_nps/2015/HIRA-NPS-2015/t30/'
+dir_path = '/YOUR_DIR_PATH/'
 dir_list = os.listdir(dir_path)
 dir_len = len(dir_list)
 
