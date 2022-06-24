@@ -18,6 +18,6 @@ sudo chown YOUR_NAME:YOUR_NAME /home/buhm/output/output.csv
 # Linux Server: Access Permission
 sudo chmod -R 777 /var/lib/mysql/DB_NAME
 
-# Local: SCP
+# Local(Windows 11): SCP
 scp -P PORT_NUMBER YOUR_NAME@SERVER_IP:/YOUR_PATH/output.csv \YOUR_LOCAL_PATH\ # (Default: C:\Users\YOUR_NAME\Desktop)
 scp -r -P PORT_NUMBER YOUR_NAME@SERVER_IP:/YOUR_PATH/output.csv \YOUR_LOCAL_PATH\ # (-r: All Files in DIR)
