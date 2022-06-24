@@ -7,6 +7,7 @@ SELECT *
 FROM table_name
 INTO OUTFILE 'output.csv'
 FIELDS TERMINATED BY ','
+ESCAPED BY '' # Null Values as Blank
 LINES TERMINATED BY '\n'
 ;
 
