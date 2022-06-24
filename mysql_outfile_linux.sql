@@ -1,3 +1,5 @@
+# by RWD_JBL
+
 # MySQL in Linux Server: Create MySQL Output file (with Header)
 SELECT 'column_1', 'column_2'
 UNION ALL
