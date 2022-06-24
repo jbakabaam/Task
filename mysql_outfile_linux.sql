@@ -14,6 +14,9 @@ LINES TERMINATED BY '\n'
 sudo mv /var/lib/mysql/DB_NAME/output.csv /YOUR_PATH/ # (Default: /home/YOUR_NAME/output)
 sudo chown YOUR_NAME:YOUR_NAME /home/buhm/output/output.csv
 
+# Linux Server: Access Permission
+sudo chmod -R 777 /var/lib/mysql/DB_NAME
+
 # Local: SCP
 scp -P PORT_NUMBER YOUR_NAME@SERVER_IP:/YOUR_PATH/output.csv \YOUR_LOCAL_PATH\ # (Default: C:\Users\YOUR_NAME\Desktop)
 scp -r -P PORT_NUMBER YOUR_NAME@SERVER_IP:/YOUR_PATH/output.csv \YOUR_LOCAL_PATH\ # (-r: All Files in DIR)
