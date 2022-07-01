@@ -149,3 +149,29 @@ len(df_list[0].columns)
 26
 
 # nhid_t30_2005
+Index(['KEY_SEQ', 'SEQ_NO', 'RECU_FR_DT', 'CLAUSE_CD', 'ITEM_CD',
+       'DIV_TYPE_CD', 'DIV_CD', 'I_II_TYPE', 'UN_COST', 'AMT',
+       'DD_MQTY_EXEC_FREQ', 'MDCN_EXEC_FREQ', 'DD_MQTY_FREQ'],
+      dtype='object')
+len(df_list[0].columns)
+13
+
+# nhid_t40_2005
+Index(['KEY_SEQ', 'SEQ_NO', 'RECU_FR_DT', 'DSBJT_CD', 'SICK_SYM'], dtype='object')
+len(df_list[0].columns)
+5
+
+# nhid_t60_2005
+Index(['KEY_SEQ', 'SEQ_NO', 'RECU_FR_DT', 'DIV_TYPE_CD', 'DIV_CD', 'GNL_NM_CD',
+       'DD_MQTY_FREQ', 'DD_EXEC_FREQ', 'MDCN_EXEC_FREQ', 'UN_COST', 'AMT'],
+      dtype='object')
+len(df_list[0].columns)
+11
+
+# nhid_yk_2005
+
+
+
+
+
+
