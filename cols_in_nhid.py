@@ -138,3 +138,14 @@ len(df_list[0].columns)
 14
 
 # nhid_t20_2005
+Index(['PERSON_ID', 'KEY_SEQ', 'YKIHO_ID', 'RECU_FR_DT', 'FORM_CD', 'DSBJT_CD',
+       'MAIN_SICK', 'SUB_SICK', 'IN_PAT_CORS_TYPE', 'OFFC_INJ_TYPE', 'RECN',
+       'VSCN', 'FST_IN_PAT_DT', 'DMD_TRAMT', 'DMD_SBRDN_AMT', 'DMD_JBRDN_AMT',
+       'DMD_CT_TOT_AMT', 'DMD_MRI_TOT_AMT', 'EDEC_ADD_RT', 'EDEC_TRAMT',
+       'EDEC_SBRDN_AMT', 'EDEC_JBRDN_AMT', 'EDEC_CT_TOT_AMT',
+       'EDEC_MRI_TOT_AMT', 'DMD_DRG_NO', 'TOT_PRES_DD_CNT'],
+      dtype='object')
+len(df_list[0].columns)
+26
+
+# nhid_t30_2005
