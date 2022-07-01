@@ -91,3 +91,8 @@ Index(['KEY_SEQ', 'SEQ_NO', 'RECU_FR_DT', 'CLAUSE_CD', 'ITEM_CD',
       dtype='object')
 len(df_list[0].columns)
 13
+
+# nhid_t40_2004
+Index(['KEY_SEQ', 'SEQ_NO', 'RECU_FR_DT', 'DSBJT_CD', 'SICK_SYM'], dtype='object')
+len(df_list[0].columns)
+5
