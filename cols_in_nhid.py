@@ -184,7 +184,59 @@ len(df_list[0].columns)
 #
 
 # nhid_gj_2006
+Index(['HCHK_YEAR', 'PERSON_ID', 'YKIHO_GUBUN_CD', 'HEIGHT', 'WEIGHT',
+       'BP_HIGH', 'BP_LWST', 'BLDS', 'TOT_CHOLE', 'HMG', 'GLY_CD',
+       'OLIG_OCCU_CD', 'OLIG_PH', 'OLIG_PROTE_CD', 'SGOT_AST', 'SGPT_ALT',
+       'GAMMA_GTP', 'HCHK_PMH_CD1', 'HCHK_PMH_CD2', 'HCHK_PMH_CD3',
+       'FMLY_LIVER_DISE_PATIEN_YN', 'FMLY_HPRTS_PATIEN_YN',
+       'FMLY_APOP_PATIEN_YN', 'FMLY_HDISE_PATIEN_YN', 'FMLY_DIABML_PATIEN_YN',
+       'FMLY_CANCER_PATIEN_YN', 'SMK_STAT_TYPE_RSPS_CD', 'SMK_TERM_RSPS_CD',
+       'DSQTY_RSPS_CD', 'DRNK_HABIT_RSPS_CD', 'TM1_DRKQTY_RSPS_CD',
+       'EXERCI_FREQ_RSPS_CD'],
+      dtype='object')
+len(df_list[0].columns)
+32
 
+# nhid_jk_2006
+Index(['STND_Y', 'PERSON_ID', 'SEX', 'AGE_GROUP', 'DTH_YM', 'DTH_CODE1',
+       'DTH_CODE2', 'SIDO', 'SGG', 'IPSN_TYPE_CD', 'CTRB_PT_TYPE_CD',
+       'DFAB_GRD_CD', 'DFAB_PTN_CD', 'DFAB_REG_YM'],
+      dtype='object')
+len(df_list[0].columns)
+14
+
+# nhid_t20_2006
+Index(['PERSON_ID', 'KEY_SEQ', 'YKIHO_ID', 'RECU_FR_DT', 'FORM_CD', 'DSBJT_CD',
+       'MAIN_SICK', 'SUB_SICK', 'IN_PAT_CORS_TYPE', 'OFFC_INJ_TYPE', 'RECN',
+       'VSCN', 'FST_IN_PAT_DT', 'DMD_TRAMT', 'DMD_SBRDN_AMT', 'DMD_JBRDN_AMT',
+       'DMD_CT_TOT_AMT', 'DMD_MRI_TOT_AMT', 'EDEC_ADD_RT', 'EDEC_TRAMT',
+       'EDEC_SBRDN_AMT', 'EDEC_JBRDN_AMT', 'EDEC_CT_TOT_AMT',
+       'EDEC_MRI_TOT_AMT', 'DMD_DRG_NO', 'TOT_PRES_DD_CNT'],
+      dtype='object')
+len(df_list[0].columns)
+26
+
+# nhid_t30_2006
+Index(['KEY_SEQ', 'SEQ_NO', 'RECU_FR_DT', 'CLAUSE_CD', 'ITEM_CD',
+       'DIV_TYPE_CD', 'DIV_CD', 'I_II_TYPE', 'UN_COST', 'AMT',
+       'DD_MQTY_EXEC_FREQ', 'MDCN_EXEC_FREQ', 'DD_MQTY_FREQ'],
+      dtype='object')
+>>> print(len(df_list[0].columns))
+13
+
+# nhid_t40_2006
+Index(['KEY_SEQ', 'SEQ_NO', 'RECU_FR_DT', 'DSBJT_CD', 'SICK_SYM'], dtype='object')
+len(df_list[0].columns)
+5
+
+# nhid_t60_2006
+Index(['KEY_SEQ', 'SEQ_NO', 'RECU_FR_DT', 'DIV_TYPE_CD', 'DIV_CD', 'GNL_NM_CD',
+       'DD_MQTY_FREQ', 'DD_EXEC_FREQ', 'MDCN_EXEC_FREQ', 'UN_COST', 'AMT'],
+      dtype='object')
+len(df_list[0].columns)
+11
+
+# nhid_yk_2006
 
 
 
