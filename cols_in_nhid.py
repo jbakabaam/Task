@@ -399,3 +399,31 @@ Index(['STND_Y', 'YKIHO_ID', 'YKIHO_GUBUN_CD', 'ORG_TYPE', 'YKIHO_SIDO',
       dtype='object')
 len(df_list[0].columns)
 10
+
+#
+#
+#
+
+# nhid_gj_2010
+Index(['HCHK_YEAR', 'PERSON_ID', 'YKIHO_GUBUN_CD', 'HEIGHT', 'WEIGHT', 'WAIST',
+       'BP_HIGH', 'BP_LWST', 'BLDS', 'TOT_CHOLE', 'TRIGLYCERIDE', 'HDL_CHOLE',
+       'LDL_CHOLE', 'HMG', 'OLIG_PROTE_CD', 'CREATININE', 'SGOT_AST',
+       'SGPT_ALT', 'GAMMA_GTP', 'HCHK_APOP_PMH_YN', 'HCHK_HDISE_PMH_YN',
+       'HCHK_HPRTS_PMH_YN', 'HCHK_DIABML_PMH_YN', 'HCHK_HPLPDM_PMH_YN',
+       'HCHK_PHSS_PMH_YN', 'HCHK_ETCDSE_PMH_YN', 'FMLY_APOP_PATIEN_YN',
+       'FMLY_HDISE_PATIEN_YN', 'FMLY_HPRTS_PATIEN_YN', 'FMLY_DIABML_PATIEN_YN',
+       'FMLY_CANCER_PATIEN_YN', 'SMK_STAT_TYPE_RSPS_CD',
+       'PAST_SMK_TERM_RSPS_CD', 'PAST_DSQTY_RSPS_CD', 'CUR_SMK_TERM_RSPS_CD',
+       'CUR_DSQTY_RSPS_CD', 'DRNK_HABIT_RSPS_CD', 'TM1_DRKQTY_RSPS_CD',
+       'MOV20_WEK_FREQ_ID', 'MOV30_WEK_FREQ_ID', 'WLK30_WEK_FREQ_ID'],
+      dtype='object')
+len(df_list[0].columns)
+41
+
+# nhid_jk_2010
+Index(['STND_Y', 'PERSON_ID', 'SEX', 'AGE_GROUP', 'DTH_YM', 'DTH_CODE1',
+       'DTH_CODE2', 'SIDO', 'SGG', 'IPSN_TYPE_CD', 'CTRB_PT_TYPE_CD',
+       'DFAB_GRD_CD', 'DFAB_PTN_CD', 'DFAB_REG_YM'],
+      dtype='object')
+len(df_list[0].columns)
+14
