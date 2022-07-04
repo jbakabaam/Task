@@ -328,3 +328,14 @@ len(df_list[0].columns)
 11
 
 # nhid_yk_2008
+Index(['STND_Y', 'YKIHO_ID', 'YKIHO_GUBUN_CD', 'ORG_TYPE', 'YKIHO_SIDO',
+       'SICKBED_CNT', 'DR_CNT', 'CT_YN', 'MRI_YN', 'PET_YN'],
+      dtype='object')
+len(df_list[0].columns)
+10
+
+#
+#
+#
+
+# nhid_gj_2009
