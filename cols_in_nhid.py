@@ -287,3 +287,11 @@ Index(['HCHK_YEAR', 'PERSON_ID', 'YKIHO_GUBUN_CD', 'HEIGHT', 'WEIGHT', 'WAIST',
       dtype='object')
 len(df_list[0].columns)
 37
+
+# nhid_jk_2008
+Index(['STND_Y', 'PERSON_ID', 'SEX', 'AGE_GROUP', 'DTH_YM', 'DTH_CODE1',
+       'DTH_CODE2', 'SIDO', 'SGG', 'IPSN_TYPE_CD', 'CTRB_PT_TYPE_CD',
+       'DFAB_GRD_CD', 'DFAB_PTN_CD', 'DFAB_REG_YM'],
+      dtype='object')
+len(df_list[0].columns)
+14
