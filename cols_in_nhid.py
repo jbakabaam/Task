@@ -255,9 +255,16 @@ Index(['KEY_SEQ', 'SEQ_NO', 'RECU_FR_DT', 'DSBJT_CD', 'SICK_SYM'], dtype='object
 len(df_list[0].columns)
 5
 
-# nhid_t30_2007
+# nhid_t60_2007
 Index(['KEY_SEQ', 'SEQ_NO', 'RECU_FR_DT', 'DIV_TYPE_CD', 'DIV_CD', 'GNL_NM_CD',
        'DD_MQTY_FREQ', 'DD_EXEC_FREQ', 'MDCN_EXEC_FREQ', 'UN_COST', 'AMT'],
       dtype='object')
 len(df_list[0].columns)
 11
+
+# nhid_yk_2007
+Index(['STND_Y', 'YKIHO_ID', 'YKIHO_GUBUN_CD', 'ORG_TYPE', 'YKIHO_SIDO',
+       'SICKBED_CNT', 'DR_CNT', 'CT_YN', 'MRI_YN', 'PET_YN'],
+      dtype='object')
+len(df_list[0].columns)
+10
