@@ -255,3 +255,9 @@ Index(['KEY_SEQ', 'SEQ_NO', 'RECU_FR_DT', 'DSBJT_CD', 'SICK_SYM'], dtype='object
 len(df_list[0].columns)
 5
 
+# nhid_t30_2007
+Index(['KEY_SEQ', 'SEQ_NO', 'RECU_FR_DT', 'DIV_TYPE_CD', 'DIV_CD', 'GNL_NM_CD',
+       'DD_MQTY_FREQ', 'DD_EXEC_FREQ', 'MDCN_EXEC_FREQ', 'UN_COST', 'AMT'],
+      dtype='object')
+len(df_list[0].columns)
+11
