@@ -268,3 +268,22 @@ Index(['STND_Y', 'YKIHO_ID', 'YKIHO_GUBUN_CD', 'ORG_TYPE', 'YKIHO_SIDO',
       dtype='object')
 len(df_list[0].columns)
 10
+
+#
+#
+#
+
+# nhid_gj_2008
+Index(['HCHK_YEAR', 'PERSON_ID', 'YKIHO_GUBUN_CD', 'HEIGHT', 'WEIGHT', 'WAIST',
+       'BP_HIGH', 'BP_LWST', 'BLDS', 'TOT_CHOLE', 'TRIGLYCERIDE', 'HDL_CHOLE',
+       'LDL_CHOLE', 'HMG', 'GLY_CD', 'OLIG_OCCU_CD', 'OLIG_PH',
+       'OLIG_PROTE_CD', 'CREATININE', 'SGOT_AST', 'SGPT_ALT', 'GAMMA_GTP',
+       'HCHK_PMH_CD1', 'HCHK_PMH_CD2', 'HCHK_PMH_CD3',
+       'FMLY_LIVER_DISE_PATIEN_YN', 'FMLY_HPRTS_PATIEN_YN',
+       'FMLY_APOP_PATIEN_YN', 'FMLY_HDISE_PATIEN_YN', 'FMLY_DIABML_PATIEN_YN',
+       'FMLY_CANCER_PATIEN_YN', 'SMK_STAT_TYPE_RSPS_CD', 'SMK_TERM_RSPS_CD',
+       'DSQTY_RSPS_CD', 'DRNK_HABIT_RSPS_CD', 'TM1_DRKQTY_RSPS_CD',
+       'EXERCI_FREQ_RSPS_CD'],
+      dtype='object')
+len(df_list[0].columns)
+37
