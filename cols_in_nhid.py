@@ -438,3 +438,11 @@ Index(['PERSON_ID', 'KEY_SEQ', 'YKIHO_ID', 'RECU_FR_DT', 'FORM_CD', 'DSBJT_CD',
       dtype='object')
 len(df_list[0].columns)
 26
+
+# nhid_t30_2010
+Index(['KEY_SEQ', 'SEQ_NO', 'RECU_FR_DT', 'CLAUSE_CD', 'ITEM_CD',
+       'DIV_TYPE_CD', 'DIV_CD', 'I_II_TYPE', 'UN_COST', 'AMT',
+       'DD_MQTY_EXEC_FREQ', 'MDCN_EXEC_FREQ', 'DD_MQTY_FREQ'],
+      dtype='object')
+len(df_list[0].columns)
+13
