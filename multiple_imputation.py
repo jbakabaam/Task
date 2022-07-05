@@ -22,6 +22,30 @@ type(X_2) # pandas.core.frame.DataFrame
 from sklearn.model_selection import train_test_split, GridSearchCV
 X_train, X_test, y_train, y_test = train_test_split(X_2, y, test_size=0.25, random_state=42)
 
+# Standardization
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+scaler.fit(X_test)
+type(scaler.fit(X_test))
+X_scaled = scaler.transform(X_test)
+X_test = pd.DataFrame(X_scaled, columns=['AGE_BLOOD', 'SEX','EXERCI_FREQ_RSPS_CD','HEIGHT','WEIGHT',
+                                         'BMI','WAIST','BP_HIGH','BP_LWST','TOT_CHOLE',
+                                         'LDL_CHOLE','HDL_CHOLE','TRIGLYCERIDE','BLDS','SGOT_AST',
+                                         'SGPT_ALT','GAMMA_STP','CREATINE','TM1_DRKQTY_RSPS_CD','DRINK_HABIT_RSPS_CD',
+                                         'DSQTY_RSPS_CD','SMK_STAT_TYPE_RSPS_CD'])
+
+# Normalization
+from sklearn.preprocessing import MinMaxScaler
+scaler = StandardScaler()
+scaler.fit(X_test)
+type(scaler.fit(X_test))
+X_scaled = scaler.transform(X_test)
+X_test = pd.DataFrame(X_scaled, columns=['AGE_BLOOD', 'SEX','EXERCI_FREQ_RSPS_CD','HEIGHT','WEIGHT',
+                                         'BMI','WAIST','BP_HIGH','BP_LWST','TOT_CHOLE',
+                                         'LDL_CHOLE','HDL_CHOLE','TRIGLYCERIDE','BLDS','SGOT_AST',
+                                         'SGPT_ALT','GAMMA_STP','CREATINE','TM1_DRKQTY_RSPS_CD','DRINK_HABIT_RSPS_CD',
+                                         'DSQTY_RSPS_CD','SMK_STAT_TYPE_RSPS_CD'])
+
 from sklearn.metrics import accuracy_score, r2_score, f1_score, auc, roc_auc_score, roc_curve, mean_squared_error as MSE
 from sklearn.metrics import precision_score, recall_score, confusion_matrix
 
