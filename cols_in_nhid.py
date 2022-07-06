@@ -627,3 +627,20 @@ len(df_list[0].columns)
 14
 
 # nhid_t20_2013
+Index(['PERSON_ID', 'KEY_SEQ', 'YKIHO_ID', 'RECU_FR_DT', 'FORM_CD', 'DSBJT_CD',
+       'MAIN_SICK', 'SUB_SICK', 'IN_PAT_CORS_TYPE', 'OFFC_INJ_TYPE', 'RECN',
+       'VSCN', 'FST_IN_PAT_DT', 'DMD_TRAMT', 'DMD_SBRDN_AMT', 'DMD_JBRDN_AMT',
+       'DMD_CT_TOT_AMT', 'DMD_MRI_TOT_AMT', 'EDEC_ADD_RT', 'EDEC_TRAMT',
+       'EDEC_SBRDN_AMT', 'EDEC_JBRDN_AMT', 'EDEC_CT_TOT_AMT',
+       'EDEC_MRI_TOT_AMT', 'DMD_DRG_NO', 'MPRSC_GRANT_NO', 'TOT_PRES_DD_CNT'],
+      dtype='object')
+len(df_list[0].columns)
+27
+
+# nhid_t30_2013
+Index(['KEY_SEQ', 'SEQ_NO', 'RECU_FR_DT', 'CLAUSE_CD', 'ITEM_CD',
+       'DIV_TYPE_CD', 'DIV_CD', 'I_II_TYPE', 'UN_COST', 'AMT',
+       'DD_MQTY_EXEC_FREQ', 'MDCN_EXEC_FREQ', 'DD_MQTY_FREQ'],
+      dtype='object')
+len(df_list[0].columns)
+13
