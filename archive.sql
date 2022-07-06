@@ -10,3 +10,6 @@ SHOW CREATE DATABASE DB_NAME;
 
 # Change Charset of Database
 ALTER DATABASE DB_NAME default character set = utf8mb4;
+
+# Show table status
+SHOW TABLE STATUS;
