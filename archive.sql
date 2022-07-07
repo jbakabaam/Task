@@ -13,3 +13,6 @@ ALTER DATABASE DB_NAME default character set = utf8mb4;
 
 # Show table status
 SHOW TABLE STATUS;
+
+# Quartile, Ntile
+SELECT NTILE(4) OVER (ORDER BY salary DESC) AS qtl, t.* FROM t;
