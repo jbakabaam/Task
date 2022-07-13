@@ -10,15 +10,9 @@ chunk_size = 1
 try, except, else -> works
 '''
 
-from datetime import datetime
-import encodings
-from encodings.utf_8 import encode
-from tarfile import ENCODING
 import pandas as pd
 import os
 from sqlalchemy import create_engine
-from sqlalchemy.orm import scoped_session, sessionmaker
-from sqlalchemy.ext.declarative import declarative_base
 import pymysql
 pymysql.install_as_MySQLdb
 
@@ -28,8 +22,8 @@ mysql_host = 'YOUR_HOST(Default: localhost)'
 mysql_port = 'YOUR_PORT(Default: 3306)'
 mysql_db_name = 'YOUR_MYSQL_DB_NAME'
 mysql_table_name = 'YOUR_MYSQL_TABLE_NAME'
-mysql_char_set = 'utf8mb4' # not used
-mysql_encoding_set = 'utf8mb4' # not used
+mysql_char_set = 'utf8mb4' # unused
+mysql_encoding_set = 'utf8mb4' # unused
 dir_path = 'YOUR_FILE_DIR_PATH'
 dir_list = os.listdir(dir_path)
 dir_len = len(dir_list)
