@@ -2,7 +2,7 @@ import pymysql
 import pandas as pd
 
 mysql_host = 'localhost'
-mysql_port = YOUR_MySQL_Port
+mysql_port = YOUR_MySQL_Port # Only Use INT
 mysql_id = 'YOUR_MySQL_ID'
 mysql_pw = 'YOUR_MySQL_PW'
 mysql_db_name = 'YOUR_DB_NAME'
