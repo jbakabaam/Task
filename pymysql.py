@@ -1,15 +1,23 @@
 import pymysql
 import pandas as pd
 
-con = pymysql.connect(host='localhost', port=YOUR_MySQL_Port,
-                      user='YOUR_MySQL_ID', password='YOUR_MySQL_PW',
-                      db='DB_NAME', charset='utf8mb4',
-                      autocommit=True, # 결과 DB 반영 (Insert or update)
-                      cursorclass=pymysql.cursors.DictCursor # DB조회시 컬럼명을 동시에 보여줌
+mysql_host = 'localhost'
+mysql_port = YOUR_MySQL_Port
+mysql_id = 'YOUR_MySQL_ID'
+mysql_pw = 'YOUR_MySQL_PW'
+mysql_db_name = 'YOUR_DB_NAME'
+mysql_char_set = 'utf8mb4'
+mysql_auto_commit = True
+
+con = pymysql.connect(host=mysql_host, port=mysql_port,
+                      user=mysql_id, password=mysql_pw,
+                      db=mysql_db_name, charset=mysql_char_set,
+                      autocommit=mysql_auto_commit,
+                      cursorclass=pymysql.cursors.DictCursor
                      )
 cur = con.cursor()
 
-sql = "select * from table limit 30"
+sql = "select * from table limit 10"
 cur.execute(sql)
 result = cur.fetchall()
 
