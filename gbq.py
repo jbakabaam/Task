@@ -13,6 +13,7 @@ import glob
 from google.cloud import bigquery
 from google.oauth2 import service_account
 from google.cloud import storage
+import gspread
 import os
 import pandas_gbq
 import pandas as pd
@@ -82,3 +83,11 @@ sql = """
 DROP TABLE `YOUR_DATASET.YOUR_TABLE`
 """
 query_job = client.query(sql)
+
+# read gspread to dataframe
+gc = gspread.service_account(filename=key)
+spreadsheet_url = 'YOUR_GOOGLE_SPREADSHEET_URL'
+doc = gc.open_by_url(spreadsheet_url) # open gspread
+worksheet = doc.worksheet('시트1') # sheet choice
+df = pd.DataFrame(worksheet.get_all_records())
+df
