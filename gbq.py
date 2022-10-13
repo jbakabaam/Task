@@ -52,10 +52,7 @@ blob.download_to_filename(destination_file_name)
 
 # gbq_query
 sql = '''
-SELECT *
-FROM `pdc.dlp_2_adm_yes_1`
-ORDER BY PERSON_ID
-LIMIT 100
+YOUR_QUERY
 '''
 query_job = client.query(sql)
 df = query_job.to_dataframe()
