@@ -8,7 +8,7 @@ GCP > Make a Project
     > User Authorization = Owner
 '''
 
-# gbq settings
+# import libs
 import glob
 from google.cloud import bigquery
 from google.oauth2 import service_account
