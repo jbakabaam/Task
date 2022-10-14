@@ -88,3 +88,38 @@ doc = gc.open_by_url(spreadsheet_url) # open gspread
 worksheet = doc.worksheet('시트1') # sheet choice
 df = pd.DataFrame(worksheet.get_all_records())
 df
+
+#
+dir_path = '/YOUR_DIR_PATH/'
+dir_list = os.listdir(dir_path)
+dir_len = len(dir_list)
+df_len_list = []
+
+print('=====================================================')
+print('=====================================================')
+print('=====================================================')
+
+for file_name in dir_list:
+    print('Start Time: ', datetime.now())
+    print('***** ', dir_len, ' file(s) left *****')
+    print('*** Now: ', file_name, ' ***')
+    df = pd.read_csv(dir_path + file_name, sep=',')
+    df_list = []
+    df_len_list.append(len(list(df.columns)))
+    
+    # Dataframe to GBQ Table
+    target_dataset = 'buhm.'
+    target_tbl = os.path.splitext(file_name)[0]
+    target_table = target_dataset+target_tbl
+    job_location = 'us'
+
+    df.to_gbq(target_table, project_id=project_id, if_exists='replace',
+          location=job_location, progress_bar=True, credentials=credentials)
+          
+    print('End Time: ', datetime.now())
+    print('-----------------------------------------------------')
+    dir_len-=1
+
+print('=====================================================')
+print('=====================================================')
+print('=====================================================')
