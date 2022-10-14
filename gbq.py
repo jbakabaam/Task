@@ -89,7 +89,7 @@ worksheet = doc.worksheet('시트1') # sheet choice
 df = pd.DataFrame(worksheet.get_all_records())
 df
 
-#
+# read multiple files to gbq tables
 dir_path = '/YOUR_DIR_PATH/'
 dir_list = os.listdir(dir_path)
 dir_len = len(dir_list)
