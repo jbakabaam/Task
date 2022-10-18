@@ -149,23 +149,23 @@ dir_path_split = dir_path.split('/')
 dir_len = len(dir_list)
 target_dataset = 'YOUR_DATASET'
 job_location = 'YOUR_GBQ_LOACTION' # ex: us
-df_len_list = []
+df_col_list = []
 
 #f = open(dir_path_split[-2]+'.txt', 'w') # save log as txt
 
-print('=====================================================', #file=f)
-print('=====================================================', #file=f)
-print('=====================================================', #file=f)
+print('=====================================================') #file=f)
+print('=====================================================') #file=f)
+print('=====================================================') #file=f)
 
-print(dir_list, #file=f)
-print('-----------------------------------------------------', #file=f)
+print(dir_list) #file=f)
+print('-----------------------------------------------------') #file=f)
 
 for file_name in dir_list:
-    print('Start Time: ', datetime.now(), #file=f)
-    print('***** ', dir_len, ' file(s) left *****', #file=f)
-    print('*** Now: ', file_name, ' ***', #file=f)
+    print('Start Time: ', datetime.now()) #file=f)
+    print('***** ', dir_len, ' file(s) left *****') #file=f)
+    print('*** Now: ', file_name, ' ***') #file=f)
     df = pd.read_csv(dir_path + file_name, sep=',', encoding='cp949', dtype='unicode')
-    df_list = []
+    df['table_name'] = file_name_split[0] # add new col
     df_len_list.append(len(list(df.columns)))
 
     # Count cols of df and load to table
@@ -178,14 +178,14 @@ for file_name in dir_list:
         sql = sql + col_name + " string, "
     sql = sql + ")"
     query_job = client.query(sql)
-    print('*** Table Headers Loaded ***', #file=f)
+    print('*** Table Headers Loaded ***') #file=f)
     time.sleep(3)
 
     # Generate Schema from previous step
     table = client.get_table(f'{target_table}')
     generated_schema = [{'name':i.name, 'type':i.field_type} for i in table.schema]
     df.columns = [i.name for i in table.schema]
-    print(df.columns, #file=f)
+    print(df.columns) #file=f)
     time.sleep(3)
 
     # Dataframe to GBQ Table
@@ -193,14 +193,14 @@ for file_name in dir_list:
               location=job_location, progress_bar=True, credentials=credentials,
               table_schema=generated_schema)
 
-    print("End Time: ", datetime.now(), #file=f)
-    print('-----------------------------------------------------', #file=f)
+    print("End Time: ", datetime.now()) #file=f)
+    print('-----------------------------------------------------') #file=f)
     dir_len -= 1
 
-print('=====================================================', #file=f)
-print('=====================================================', #file=f)
-print('=====================================================', #file=f)
+print('=====================================================') #file=f)
+print('=====================================================') #file=f)
+print('=====================================================') #file=f)
 
-print(df_len_list, #file=f)
+print(df_col_list) #file=f)
 
 #f.close()
