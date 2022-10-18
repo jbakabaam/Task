@@ -8,6 +8,7 @@ GCP > Make a Project
     > User Authorization = Owner
 '''
 
+
 # import libs
 import glob
 from google.cloud import bigquery
@@ -17,7 +18,13 @@ import gspread
 import os
 import pandas_gbq
 import pandas as pd
+pd.set_option('display.max_rows', 500)
+pd.set_option('display.max_columns', 500)
 import numpy as np
+from datetime import datetime
+import time
+import sys
+
 
 # gbq settings
 key = 'YOUR_GCP_KEY_JSON'
@@ -27,10 +34,12 @@ credentials = service_account.Credentials.from_service_account_file(key_path)
 client = bigquery.Client(credentials = credentials, project = project_id)
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"]= key
 
+
 # print buckets
 storage_client = storage.Client()
 buckets = list(storage_client.list_buckets())
 print(buckets)
+
 
 # upload to gcp
 bucket_name = 'YOUR_BUCKET_NAME'
@@ -41,6 +50,7 @@ bucket = storage_client.bucket(bucket_name)
 blob = bucket.blob(destination_blob_name)
 blob.upload_from_filename(source_file_name)
 
+
 # download from gcp
 bucket_name = 'YOUR_BUCKET_NAME'
 source_blob_name = 'YOUR_FILENAME_AT_GCP.FILETYPE'
@@ -50,6 +60,7 @@ bucket = storage_client.bucket(bucket_name)
 blob = bucket.blob(source_blob_name)
 blob.download_to_filename(destination_file_name)
 
+
 # gbq_query
 sql = '''
 YOUR_QUERY
@@ -58,11 +69,13 @@ query_job = client.query(sql)
 df = query_job.to_dataframe()
 df
 
+
 # dataframe to gbq_table
 target_table = 'YOUR_DATASET.YOUR_TABLE'
 job_location = 'YOUR_DATASET_LOCATION' # ex: us
 df.to_gbq(target_table, project_id=project_id, if_exists='replace',
           location=job_location, progress_bar=True, credentials=credentials)
+
 
 # create a gbq_table
 sql = """
@@ -75,11 +88,13 @@ CREATE TABLE `YOUR_DATASET.YOUR_TABLE_NAME`
 """
 query_job = client.query(sql)
 
+
 # drop a gbq_table
 sql = """
 DROP TABLE `YOUR_DATASET.YOUR_TABLE`
 """
 query_job = client.query(sql)
+
 
 # read gspread to dataframe
 gc = gspread.service_account(filename=key)
@@ -88,6 +103,7 @@ doc = gc.open_by_url(spreadsheet_url) # open gspread
 worksheet = doc.worksheet('시트1') # sheet choice
 df = pd.DataFrame(worksheet.get_all_records())
 df
+
 
 # read multiple files to gbq tables
 dir_path = '/YOUR_DIR_PATH/'
@@ -124,60 +140,67 @@ print('=====================================================')
 print('=====================================================')
 print('=====================================================')
 
+
+
 # read multiple files to gbq tables with schema
-dir_path = '/YOUR_PATH/'
+dir_path = '/YOUR_DIR_PATH/'
 dir_list = os.listdir(dir_path)
+dir_path_split = dir_path.split('/')
 dir_len = len(dir_list)
 target_dataset = 'YOUR_DATASET'
-job_location = '' # ex: us
+job_location = 'YOUR_GBQ_LOACTION' # ex: us
 df_len_list = []
 
-print('=====================================================')
-print('=====================================================')
-print('=====================================================')
+#f = open(dir_path_split[-2]+'.txt', 'w') # save log as txt
 
-print(dir_list)
-print('-----------------------------------------------------')
+print('=====================================================', #file=f)
+print('=====================================================', #file=f)
+print('=====================================================', #file=f)
+
+print(dir_list, #file=f)
+print('-----------------------------------------------------', #file=f)
 
 for file_name in dir_list:
-    print('Start Time: ', datetime.now())
-    print('***** ', dir_len, ' file(s) left *****')
-    print('*** Now: ', file_name, ' ***')
+    print('Start Time: ', datetime.now(), #file=f)
+    print('***** ', dir_len, ' file(s) left *****', #file=f)
+    print('*** Now: ', file_name, ' ***', #file=f)
     df = pd.read_csv(dir_path + file_name, sep=',', encoding='cp949', dtype='unicode')
     df_list = []
     df_len_list.append(len(list(df.columns)))
-    
+
     # Count cols of df and load to table
     target_tbl = os.path.splitext(file_name)[0]
     target_table = target_dataset+'.'+target_tbl
     df_cols = df.columns
-    
+
     sql = f'CREATE TABLE `{target_table}` ('
     for col_name in df_cols:
-        sql = sql + col_name + " string, " # all of col_dtype is string
+        sql = sql + col_name + " string, "
     sql = sql + ")"
     query_job = client.query(sql)
-    print('*** Table Headers Loaded ***')
+    print('*** Table Headers Loaded ***', #file=f)
     time.sleep(3)
-    
+
     # Generate Schema from previous step
     table = client.get_table(f'{target_table}')
     generated_schema = [{'name':i.name, 'type':i.field_type} for i in table.schema]
     df.columns = [i.name for i in table.schema]
-    print(df.columns)
+    print(df.columns, #file=f)
     time.sleep(3)
-    
+
     # Dataframe to GBQ Table
     df.to_gbq(target_table, project_id=project_id, if_exists='replace',
               location=job_location, progress_bar=True, credentials=credentials,
               table_schema=generated_schema)
-          
-    print("End Time: ", datetime.now())
-    print('-----------------------------------------------------')
+
+    print("End Time: ", datetime.now(), #file=f)
+    print('-----------------------------------------------------', #file=f)
     dir_len -= 1
 
-print('=====================================================')
-print('=====================================================')
-print('=====================================================')
+print('=====================================================', #file=f)
+print('=====================================================', #file=f)
+print('=====================================================', #file=f)
 
-print(df_len_list)
+print(df_len_list, #file=f)
+
+#f.close()
