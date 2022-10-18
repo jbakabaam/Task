@@ -184,8 +184,8 @@ for file_name in dir_list:
     # Generate Schema from previous step
     table = client.get_table(f'{target_table}')
     generated_schema = [{'name':i.name, 'type':i.field_type} for i in table.schema]
-    df.columns = [i.name for i in table.schema]
-    print(df.columns) #file=f)
+    df_cols_new = [i.name for i in table.schema]
+    print(df_cols_new) #file=f)
     time.sleep(3)
 
     # Dataframe to GBQ Table
