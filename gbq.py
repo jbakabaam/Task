@@ -123,3 +123,61 @@ for file_name in dir_list:
 print('=====================================================')
 print('=====================================================')
 print('=====================================================')
+
+# read multiple files to gbq tables with schema
+dir_path = '/YOUR_PATH/'
+dir_list = os.listdir(dir_path)
+dir_len = len(dir_list)
+target_dataset = 'YOUR_DATASET'
+job_location = '' # ex: us
+df_len_list = []
+
+print('=====================================================')
+print('=====================================================')
+print('=====================================================')
+
+print(dir_list)
+print('-----------------------------------------------------')
+
+for file_name in dir_list:
+    print('Start Time: ', datetime.now())
+    print('***** ', dir_len, ' file(s) left *****')
+    print('*** Now: ', file_name, ' ***')
+    df = pd.read_csv(dir_path + file_name, sep=',', encoding='cp949', dtype='unicode')
+    df_list = []
+    df_len_list.append(len(list(df.columns)))
+    
+    # Count cols of df and load to table
+    target_tbl = os.path.splitext(file_name)[0]
+    target_table = target_dataset+'.'+target_tbl
+    df_cols = df.columns
+    
+    sql = f'CREATE TABLE `{target_table}` ('
+    for col_name in df_cols:
+        sql = sql + col_name + " string, " # all of col_dtype is string
+    sql = sql + ")"
+    query_job = client.query(sql)
+    print('*** Table Headers Loaded ***')
+    time.sleep(3)
+    
+    # Generate Schema from previous step
+    table = client.get_table(f'{target_table}')
+    generated_schema = [{'name':i.name, 'type':i.field_type} for i in table.schema]
+    df.columns = [i.name for i in table.schema]
+    print(df.columns)
+    time.sleep(3)
+    
+    # Dataframe to GBQ Table
+    df.to_gbq(target_table, project_id=project_id, if_exists='replace',
+              location=job_location, progress_bar=True, credentials=credentials,
+              table_schema=generated_schema)
+          
+    print("End Time: ", datetime.now())
+    print('-----------------------------------------------------')
+    dir_len -= 1
+
+print('=====================================================')
+print('=====================================================')
+print('=====================================================')
+
+print(df_len_list)
