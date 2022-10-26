@@ -207,7 +207,6 @@ print(df_col_list) #file=f)
 
 
 # ALL FILES FOR EACH DIR
-
 dir_path = '/YOUR_PATH/'
 dir_list = os.listdir(dir_path)
 dir_path_split = dir_path.split('/')
