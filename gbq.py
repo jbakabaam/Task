@@ -204,3 +204,85 @@ print('=====================================================') #file=f)
 print(df_col_list) #file=f)
 
 #f.close()
+
+
+# ALL FILES FOR EACH DIR
+
+dir_path = '/YOUR_PATH/'
+dir_list = os.listdir(dir_path)
+dir_path_split = dir_path.split('/')
+dir_len = len(dir_list)
+target_dataset = 'YOUR_DATASET'
+job_location = 'YOUR_LOCATION' #us
+df_col_list = []
+
+cnt = []
+for (path, dir, files) in os.walk(dir_path):
+    for filename in files:
+        file_name = os.path.basename(filename)
+        file_path = path+'/'
+        #print(file_name)
+        cnt.append(file_name)
+cnt_len = len(cnt) # Count Number Of All Files
+#print(cnt_len)
+
+print('=====================================================') #file=f)
+print('=====================================================') #file=f)
+print('=====================================================') #file=f)
+
+print(dir_list) #file=f)
+print('-----------------------------------------------------') #file=f)
+
+for (path, dir, files) in os.walk(dir_path):
+    for filename in files:
+        file_name = os.path.basename(filename)
+        file_path = path+'/'
+                        
+        #now_table_len = len(file_path.split('/')[-2])
+        
+        print('Start Time: ', datetime.now()) #file=f)
+        print('***** ', cnt_len, ' file(s) left *****') #file=f)
+        print('*** Now: ', file_name, ' ***') #file=f)
+        
+        df = pd.read_csv(file_path + file_name, sep=',', encoding='cp949', dtype='unicode')
+        file_name_split = file_name.split('.')
+        #df['NEW_COL_1'] = file_name_split[0] #prep: add 1st new col
+        #df['NEW_COL_2'] =  file_path.split('/')[-4] #prep: add 2nd new col
+        df_col_list.append(len(list(df.columns)))
+
+        # Read cols of df and load to table
+        target_tbl = os.path.splitext(file_name)[0]
+        target_table = target_dataset+'.'+target_tbl
+        df_cols = df.columns
+        
+        print('*** GBQ: ', target_table, ' ***') #file=f)
+        sql = f'CREATE TABLE `{target_table}` ('
+        for col_name in df_cols:
+            sql = sql + col_name + " string, "
+        sql = sql + ")"
+        query_job = client.query(sql)
+        print('*** GBQ: Table Schema Loaded ***') #file=f)
+        time.sleep(3)
+
+        # Generate Schema from previous step
+        table = client.get_table(f'{target_table}')
+        generated_schema = [{'name':i.name, 'type':i.field_type} for i in table.schema]
+        df_cols_new = [i.name for i in table.schema]
+        print('*** GBQ: Table Cols ***') #file=f)
+        print(df_cols_new) #file=f)
+        time.sleep(3)
+
+        # Dataframe to GBQ Table
+        df.to_gbq(target_table, project_id=project_id, if_exists='replace',
+                  location=job_location, progress_bar=True, credentials=credentials,
+                  table_schema=generated_schema)
+        
+        print("End Time: ", datetime.now()) #file=f)
+        print('-----------------------------------------------------') #file=f)
+        
+        #now_table_len -= 1
+        cnt_len -= 1
+        
+print('=====================================================') #file=f)
+print('=====================================================') #file=f)
+print('=====================================================') #file=f)
