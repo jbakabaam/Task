@@ -1,0 +1,24 @@
+# less
+less -S FILE
+
+# grep the keyword LIKE %KEYWORD%
+grep KEYWORD FILE
+ex: grep 138817 AAA_test_set.txt
+
+# grep the exactly keyword
+grep -w KEYWORD FILE
+ex: grep -w 138817 AAA_test_set.txt
+
+# head
+head -n N_OF_TOP_LOWS FILE
+ex: head -n 10 AAA_test_set.txt
+
+# head with pipelines
+ex: head -n 10 AAA_test_set.txt | cut -f 2 | sort -nu
+
+# cut
+cut -f N_FIELD_INDEX
+ex: cut -f 2
+
+# sort (unique)
+sort -u
