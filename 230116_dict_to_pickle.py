@@ -15,7 +15,9 @@ class DataProcessor:
             header = f.readline().strip().split("\t")
             del header[0]
             del header[1:5]
-            rs_cols = header[1:5]
+            rs_cols = header
+            del rs_cols[0]
+#             rs_cols = header[1:5]
             nums = 1
 
             for line in f:
